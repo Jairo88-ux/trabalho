@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Primeira página</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="tema-noite.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Jairo de Oliveira</h1>
+        <p>Estou testando umas coisas</p>
+    </header>
+
+
+    <nav>
+        <ul>
+            <li><a href="#Sobre">Sobre mim</a></li>
+            <li><a href="#gostos">O que eu gosto</a></li>
+            <li><a href="#dados">Meus horarios</a></li>
+            <li><a href="#Contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <section id="Sobre">
+        <h2>Me chamo Jairo</h2>
+        <p>Estudo Engenharia de software e estou aprendendo HTML</p>
+    </Section>
+
+
+    <section id="gostos">
+        <h2>O que eu gosto</h2>
+        <p>Rock, filmes e videogame</p>
+
+        <h3>Meus três jogos favoritos</h3>
+        <ol>
+            <li>Bloodborne</li>
+            <li>The last of us</li>
+            <li>Red dead Redemption 2</li>
+        </ol>
+
+        <h3>Minhas bandas favoritas</h3>
+        <ol>
+            <li>System of down</li>
+            <li>Metallica</li>
+            <li>slipknot</li>
+        </ol>
+
+        <h3>Meus filme favoritos</h3>
+        <ol>
+            <li>Os suspeitos</li>
+            <li>Rec</li>
+            <li>Os incriveis</li>
+        </ol>
+    </section>
+
+    <section id="dados">
+        <h2>Meus horários</h2>
+        <table>
+            <caption>Aulas do semestre</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Dia</th>
+                    <th scope="col">Disciplina</th>
+                    <th scope="col">Sala</th>
+                </tr>
+                <tr>
+                    <td>Terça feira</td>
+                    <td>Sistemas de informação e sociedade</td>
+                    <td>604</td>
+                </tr>
+                <tr>
+                    <td>Quarta feira</td>
+                    <td>Introdução a programação de computadores</td>
+                    <td>505</td>
+                </tr>
+                <tr>
+                    <td>Quinta feira</td>
+                    <td>Desenvolvimento web</td>
+                    <td>710</td>
+                </tr>
+                <tr>
+                    <td>Sexta feira</td>
+                    <td>Banco de dados</td>
+                    <td>701</td>
+                </tr>
+            </thead>
+            <!--uma <tr> por dia-->
+        </table>
+    </section>
+
+    <section id="Contato">
+        <h2>Fale comigo</h2>
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Seus dados</legend>
+                <div>
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div>
+                    <label for="email">E-mail</label>
+                    <input type="text" id="email" name="E-mail" required>
+                </div>
+                <div>
+                    <label for="assunto">Assunto</label>
+                    <select id="assunto" name="assunto"> 
+                        <option value="trabalho">Proposta de trabalho</option>
+                        <option value="duvida">Dúvida</option>
+                        <option value="outro">Outro</option>    
+                    </select> 
+                </div>
+                <div>
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="6" cols="40" required></textarea>
+                </div>
+            </fieldset>
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpar</button>
+        </form>
+    </section>
+</body>
+
+</html>

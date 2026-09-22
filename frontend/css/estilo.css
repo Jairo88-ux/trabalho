@@ -1,0 +1,386 @@
+:root {
+  /* tipografia */
+  --fonte:      "Poppins", "Segoe UI", Arial, Helvetica, sans-serif;
+
+  /* cores.
+     Repare que cada variável tem UM papel só. --sobre-principal existe
+     porque o texto que fica em cima da cor principal não é o mesmo texto
+     que fica em cima do fundo — e, num tema escuro, ele chega a ser o
+     oposto. Variável com dois papéis é o que quebra na hora de trocar o
+     tema. */
+  --principal:        #150ea2;   /* cabeçalho, títulos, botão principal */
+  --principal-escuro: #0d0929;   /* o hover do botão principal          */
+  --sobre-principal:  #ffffff;   /* texto em cima da cor principal      */
+
+  --barra:            #f7f0f4;   /* o menu e o rodapé                   */
+  --sobre-barra:      #f0d7e6;   /* texto em cima da barra              */
+
+  --apoio:            #053e60;   /* h3, cabeçalho da tabela             */
+  --realce:           #dfa03f;   /* o contorno do foco                  */
+  --realce-suave:     #f0d7e6;   /* fundos leves: zebra ao passar o
+                                    mouse, .destaque, a régua do h2     */
+
+  --fundo:       #f4eff2;
+  --superficie:  #ffffff;
+  --zebra:       #faf7f9;        /* as linhas pares da tabela           */
+  --texto:       #231f20;
+  --texto-fraco: #6e6a70;
+  --linha:       #e2d8de;
+}
+
+*, *::before, *::after {
+box-sizing: border-box;
+}
+
+
+/* ==========================================================================
+   1. A PÁGINA
+
+   Tudo o que está no body é herdado por quem está dentro: fonte, tamanho,
+   entrelinha e cor do texto são escritos UMA vez, aqui.
+   ========================================================================== */
+body {
+  font-family: var(--fonte);
+  font-size: 1rem;
+  line-height: 1.6;
+
+  color: var(--texto);
+  background-color: var(--fundo);
+
+  max-width: 860px;
+  margin: 0 auto;        /* 0 em cima/embaixo, automático nas laterais */
+  padding: 0 20px 40px;
+}
+
+
+/* ==========================================================================
+   2. CABEÇALHO
+   ========================================================================== */
+header {
+  background-color: var(--principal);
+  color: var(--sobre-principal);
+  padding: 36px 28px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+/* Descendente: só o parágrafo que está dentro do header. */
+header p {
+  margin: 0;
+  color: var(--sobre-principal);
+  opacity: 0.85;          /* um degrau abaixo do h1, sem inventar outra cor */
+}
+
+
+/* ==========================================================================
+   3. O MENU
+
+   O <nav> é uma <ul>, como se aprendeu na aula 03. Aqui ela deixa de
+   parecer uma lista de compras.
+
+   inline-block põe os itens lado a lado. É o jeito clássico, e funciona.
+
+   NO PASSO 5 DE HOJE você vai descobrir por que o <a> também precisa de um
+   display próprio — e o que acontece com o padding quando ele não tem.
+   ========================================================================== */
+nav {
+  background-color: var(--barra);
+  padding: 0 16px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;        /* quebra a linha se não couber tudo */
+  gap: 4px;                /* espaçamento entre os itens */
+}
+
+nav li {
+  
+}
+
+nav a {
+  display: block;
+  padding: .875rem 1rem;
+}
+
+nav a:hover {
+  background-color: var(--principal);
+  color: var(--sobre-principal);
+}
+
+nav a:focus {
+  outline: 3px solid var(--realce);
+  outline-offset: 2px;
+}
+
+
+/* ==========================================================================
+   4. CONTEÚDO
+
+   A escala tipográfica: 2.5 / 1.75 / 1.25 / 1. Quatro degraus visivelmente
+   diferentes — se o h2 e o h3 parecem iguais, não há hierarquia nenhuma.
+
+   FALTA AQUI: o espaço. Não há regra para `section` nem para `p`, e os
+   números de padding do `main` foram escolhidos a olho. É o passo 3.
+   ========================================================================== */
+main {
+  background-color: var(--superficie);
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--principal);
+  border-bottom: 2px solid var(--realce-suave);
+  padding-bottom: 8px;
+  margin-top: 36px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--apoio);
+}
+
+a {
+  color: var(--principal);
+}
+
+a:hover {
+  color: var(--principal-escuro);
+}
+
+img {
+  max-width: 100%;      /* a imagem nunca estoura a coluna */
+  height: auto;
+  border-radius: 6px;
+}
+
+/* As listas de conteúdo continuam sendo listas — só ficam mais arejadas. */
+main ul li,
+main ol li {
+  margin-bottom: 6px;
+}
+
+strong {
+  color: var(--principal-escuro);
+}
+
+
+/* ==========================================================================
+   5. A TABELA
+
+   border-collapse é a primeira linha de qualquer tabela: sem ele, cada
+   célula desenha a própria borda e ficam duas linhas entre vizinhas.
+   ========================================================================== */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 16px 0 8px;
+}
+
+caption {
+  text-align: left;
+  font-weight: 600;
+  color: var(--apoio);
+  padding-bottom: 10px;
+}
+
+th,
+td {
+  border: 1px solid var(--linha);
+  padding: 10px 14px;
+  text-align: left;
+}
+
+/* O th do thead é cabeçalho de coluna. */
+thead th {
+  background-color: var(--apoio);
+  color: var(--superficie);   /* no tema escuro, o apoio é claro e a
+                                 superfície é escura: continua legível */
+}
+
+/* E o th do tbody é cabeçalho de linha — outro papel, outro peso. */
+tbody th {
+  background-color: var(--fundo);
+  color: var(--principal);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--zebra);
+}
+
+tbody tr:hover {
+  background-color: var(--realce-suave);
+}
+
+
+/* ==========================================================================
+   6. O FORMULÁRIO DE CONTATO
+
+   É AQUI QUE A FALTA DO border-box MAIS APARECE: os campos têm
+   width: 100% e padding junto, e no modelo padrão o padding soma POR FORA.
+   Olhe a borda direita dos campos contra a borda do fieldset — e depois
+   olhe de novo, no passo 2, com as três linhas escritas.
+   ========================================================================== */
+form {
+  background-color: var(--fundo);
+  padding: 24px;
+  border-radius: 8px;
+  border-top: 4px solid var(--principal);
+}
+
+fieldset {
+  border: 1px solid var(--linha);
+  border-radius: 6px;
+  background-color: var(--superficie);
+  padding: 18px 20px 6px;
+  margin-bottom: 18px;
+}
+
+legend {
+  color: var(--principal);
+  font-weight: 600;
+  padding: 0 8px;
+}
+
+/* Cada campo está embrulhado num <div> desde o ciclo 3: é ele que separa
+   um campo do outro, com margem. */
+form div {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  margin-bottom: 5px;
+}
+
+/* Seletor de atributo: escolhe o input pelo type.
+   Sem isso, "input { width: 100% }" esticaria também o checkbox. */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--linha);
+  border-radius: 4px;
+
+  /* Sem estas duas linhas o campo fica com o branco de fábrica do
+     navegador — e no tema escuro isso vira texto claro sobre fundo
+     branco, ou seja, invisível. */
+  background-color: var(--superficie);
+  color: var(--texto);
+
+  /* Campo de formulário não herda a fonte do body — tem de pedir. */
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 7.5rem;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+}
+
+input[type="checkbox"] + label {
+  display: inline;
+  font-weight: 400;
+}
+
+/* :focus é acessibilidade, não enfeite: é como quem navega por Tab sabe
+   onde está. Nunca apague o contorno sem pôr outra marca no lugar. */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--realce);
+  outline-offset: 1px;
+  border-color: var(--principal);
+}
+
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: var(--principal);
+  color: var(--sobre-principal);
+}
+
+button[type="submit"]:hover {
+  background-color: var(--principal-escuro);
+}
+
+/* O botão secundário não compete com o principal. */
+button[type="reset"] {
+  background-color: var(--superficie);
+  color: var(--texto-fraco);
+  border: 1px solid var(--linha);
+  margin-left: 8px;
+}
+
+button:focus {
+  outline: 3px solid var(--realce);
+  outline-offset: 2px;
+}
+
+
+/* ==========================================================================
+   7. BARRA LATERAL E RODAPÉ
+   ========================================================================== */
+aside {
+  background-color: var(--superficie);
+  border-left: 4px solid var(--realce);
+  padding: 20px 28px;
+  margin-top: 4px;
+}
+
+aside h2 {
+  margin-top: 8px;
+  font-size: 1.25rem;
+  border-bottom: none;
+}
+
+footer {
+  background-color: var(--barra);
+  color: var(--sobre-barra);
+  padding: 20px 28px;
+  font-size: 0.875rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+
+.destaque {
+  background-color: var(--realce-suave);
+  border-left: 4px solid var(--principal);
+  padding: 12px 16px;
+}

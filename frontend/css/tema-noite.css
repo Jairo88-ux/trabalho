@@ -1,0 +1,20 @@
+:root {
+    --principal:        #000000;   /* cabeçalho, títulos, botão principal */
+  --principal-escuro: #0d0929;   /* o hover do botão principal          */
+  --sobre-principal:  #ffffff;   /* texto em cima da cor principal      */
+
+  --barra:            #f7f0f4;   /* o menu e o rodapé                   */
+  --sobre-barra:      #f0d7e6;   /* texto em cima da barra              */
+
+  --apoio:            #000000;   /* h3, cabeçalho da tabela             */
+  --realce:           #000000;   /* o contorno do foco                  */
+  --realce-suave:     #f0d7e6;   /* fundos leves: zebra ao passar o
+                                    mouse, .destaque, a régua do h2     */
+
+  --fundo:       #f4eff2;
+  --superficie:  #ffffff;
+  --zebra:       #faf7f9;        /* as linhas pares da tabela           */
+  --texto:       #231f20;
+  --texto-fraco: #6e6a70;
+  --linha:       #e2d8de;
+}

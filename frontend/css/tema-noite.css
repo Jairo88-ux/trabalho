@@ -1,20 +1,20 @@
 :root {
-    --principal:        #000000;   /* cabeçalho, títulos, botão principal */
-  --principal-escuro: #0d0929;   /* o hover do botão principal          */
-  --sobre-principal:  #ffffff;   /* texto em cima da cor principal      */
+  --principal: #a70808; /* cabeçalho, títulos, botão principal */
+  --principal-escuro: #0d0929; /* o hover do botão principal          */
+  --sobre-principal: #ffffff; /* texto em cima da cor principal      */
 
-  --barra:            #f7f0f4;   /* o menu e o rodapé                   */
-  --sobre-barra:      #f0d7e6;   /* texto em cima da barra              */
+  --barra: #710e0e; /* o menu e o rodapé                   */
+  --sobre-barra: #8b1111; /* texto em cima da barra              */
 
-  --apoio:            #000000;   /* h3, cabeçalho da tabela             */
-  --realce:           #000000;   /* o contorno do foco                  */
-  --realce-suave:     #f0d7e6;   /* fundos leves: zebra ao passar o
+  --apoio: #780b0b; /* h3, cabeçalho da tabela             */
+  --realce: #000000; /* o contorno do foco                  */
+  --realce-suave: #f0d7e6; /* fundos leves: zebra ao passar o
                                     mouse, .destaque, a régua do h2     */
 
-  --fundo:       #f4eff2;
-  --superficie:  #ffffff;
-  --zebra:       #faf7f9;        /* as linhas pares da tabela           */
-  --texto:       #231f20;
-  --texto-fraco: #6e6a70;
-  --linha:       #e2d8de;
+  --fundo: #0a0808;
+  --superficie: #2a1a22;
+  --zebra: #241722;
+  --texto: #a30f0f;
+  --texto-fraco: #911313;
+  --linha: #4a3540;
 }

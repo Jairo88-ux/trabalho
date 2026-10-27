@@ -5,9 +5,9 @@ const temaNoite = document.querySelector("#tema-noite");
 function darkMode(){
     temaNoite.disabled = !temaNoite.disabled;
     if (temaNoite.disabled) {
-botaoTema.textContent = "🌙";
+    botaoTema.textContent = "🌞";
 } else {
-botaoTema.textContent = "🌞";
+    botaoTema.textContent = "🌙";
 }
 
 }
@@ -35,17 +35,26 @@ function trocarDica() {
 
 
 function conferirFormulario(evento) {
-    evento.preventDefault();
+
+        evento.preventDefault();
 
     const nome = campoNome.value.trim();
-    if (nome.length < 3  || nome.length > 60) {
+
+    if (nome.length < 3 || nome.length > 60) {
         aviso.textContent = "O nome deve ter entre 3 e 60 letras.";
-    } else if (campoAssunto.value === "trabalho" && campoMensagem.value.trim().length < 20) {
-        aviso.textContent = "Conte mais sobre a proposta (minimo 20).";
+    } else if (temNumero(nome)) {
+        aviso.textContent = "O nome não pode conter números.";
+    } else if (
+        campoAssunto.value === "trabalho" &&
+        campoMensagem.value.trim().length < 20
+    ) {
+        aviso.textContent = "Conte mais sobre a proposta (mínimo 20).";
     } else {
-        aviso.textContent = "Tudo certo!";
-        aviso.textContent = "Recebi o clique. Por enquanto, nada foi enviado.";  
+        aviso.textContent = "Tudo certo! Enviando...";
+        formulario.submit();
+    } 
+
     }
-}
+
 
 formulario.addEventListener("submit", conferirFormulario);

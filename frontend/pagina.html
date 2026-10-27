@@ -8,8 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/estilo.css">
-    <link rel="stylesheet" href="tema-noite.css">
-    <link id="tema-noite" rel="stylesheet" href="tema-noite.css">
+    <link rel="stylesheet" href="css/tema-noite.css" id="tema-noite" disabled>
     <script src="js/script.js" defer></script>
 </head>
 
@@ -17,10 +16,16 @@
 
     <header>
         <h1>Jairo de Oliveira</h1>
-        <p>Estou testando umas coisas</p>
+
+        <p>Estudando Engenharia de Software</p>
+
         <button type="button" id="botao-tema">🌞</button>
+
     </header>
 
+    <footer>
+        <p>Fulano de Tal &middot; 2026 &middot; ARA0062 &middot; Newton Paiva</p>
+    </footer>
 
     <nav>
         <ul>
@@ -100,7 +105,7 @@
 
     <section id="Contato">
         <h2>Fale comigo</h2>
-        <form action="#" method="post">
+        <form action="../backend/processa-contato.php" method="POST">
             <fieldset>
                 <legend>Seus dados</legend>
                 <div>
@@ -124,8 +129,12 @@
                     <textarea id="mensagem" name="mensagem" rows="6" cols="40" required></textarea>
                 </div>
             </fieldset>
-            <button type="submit">Enviar</button>
-            <button type="reset">Limpar</button>
+
+            <div>
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpar</button>
+            </div>
+
             <p id="aviso" class="avisos" aria-live="polite"></p>
         </form>
     </section>
